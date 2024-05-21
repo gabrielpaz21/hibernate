@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class ManyToMany {
 
     @Test
-    void manyToOne() {
+    void manyToMany() {
         insertData();
         var session = HibernateUtil.getSessionFactory().openSession();
 

@@ -112,10 +112,10 @@ public class LifeCycleTest {
     void load() {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
-//        var address3 = session.getReference(Address.class, 3L); // No carga el objeto hasta que no se accede a sus atributos
-        var address3 = session.find(Address.class, 3L);
+        var address3 = session.getReference(Address.class, 3L); // No carga el objeto hasta que no se accede a sus atributos
+        //var address3 = session.find(Address.class, 3L);
         System.out.println("=========");
-        session.close();
+        //session.close();
         System.out.println(address3.getCountry());
     }
 }

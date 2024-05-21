@@ -73,11 +73,9 @@ public class HibernateTest {
 
     @Test
     void delete() {
-
-
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.remove(session.find(Employee.class, 3L));
+        session.remove(session.find(Employee.class, 2L));
         session.getTransaction().commit();
     }
 }

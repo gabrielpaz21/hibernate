@@ -24,7 +24,6 @@ public class Category {
         this.minAge = minAge;
     }
 
-
     public Long getId() {
         return id;
     }

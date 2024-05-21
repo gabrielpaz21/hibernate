@@ -14,8 +14,8 @@ public class OneToManyTest {
         insertData();
         var session = HibernateUtil.getSessionFactory().openSession();
 
-        var book1 = session.find(Author.class, 1L);
-        System.out.println(book1.getBooks());
+        var author = session.find(Author.class, 1L);
+        System.out.println(author.getBooks());
 
     }
 
