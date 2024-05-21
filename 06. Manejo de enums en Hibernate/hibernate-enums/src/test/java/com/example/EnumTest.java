@@ -57,11 +57,16 @@ public class EnumTest {
         var emp2 = new Employee("222B", "emp2", 25, EmployeeCategory.SENIOR);
         var emp3 = new Employee("333C", "emp3", 30, EmployeeCategory.MANAGER);
         var emp4 = new Employee("444D", "emp4", 40, EmployeeCategory.C_LEVEL);
+        var emp5 = new Employee();
+        emp5.setDni("555D");
+        emp5.setName("emp5");
+        emp5.setAge(50);
 
         session.persist(emp1);
         session.persist(emp2);
         session.persist(emp3);
         session.persist(emp4);
+        session.persist(emp5);
 
         session.getTransaction().commit();
 

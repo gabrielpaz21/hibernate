@@ -17,11 +17,11 @@ public class Employee {
 
     private Integer age;
 
-//    @Enumerated(EnumType.STRING)
-//    @Column(columnDefinition = "varchar(30) default 'JUNIOR'")
-    @Enumerated(EnumType.ORDINAL)
-    @Convert(converter = CategoryEnumConverter.class)
-    @Column(columnDefinition = "smallint default 1")
+      @Enumerated(EnumType.STRING)
+      @Column(columnDefinition = "varchar(30) default 'JUNIOR'")
+//    @Enumerated(EnumType.ORDINAL)
+//    @Convert(converter = CategoryEnumConverter.class)
+//    @Column(columnDefinition = "smallint default 1")
     private EmployeeCategory category;
 
     public Employee() {
