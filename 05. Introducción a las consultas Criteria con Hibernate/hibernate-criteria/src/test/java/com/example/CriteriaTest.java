@@ -23,8 +23,9 @@ public class CriteriaTest {
 
         var builder = session.getCriteriaBuilder();
         var criteria = builder.createQuery(Author.class);
+        var root = criteria.from(Author.class);
 
-        criteria.select(criteria.from(Author.class));
+        criteria.select(root);
 
         var authors = session.createQuery(criteria).list();
 
@@ -39,10 +40,10 @@ public class CriteriaTest {
 
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         JpaCriteriaQuery<Author> criteria = builder.createQuery(Author.class);
-        JpaRoot<Author> authors = criteria.from(Author.class);
+        JpaRoot<Author> root = criteria.from(Author.class);
 
-        criteria.select(authors)
-                .where(builder.equal(authors.get("id"), 1L));
+        criteria.select(root)
+                .where(builder.equal(root.get("id"), 1L));
 
         Author author = session.createQuery(criteria).getSingleResult();
 
@@ -58,10 +59,10 @@ public class CriteriaTest {
 
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         JpaCriteriaQuery<Author> criteria = builder.createQuery(Author.class);
-        JpaRoot<Author> authors = criteria.from(Author.class);
+        JpaRoot<Author> root = criteria.from(Author.class);
 
-        criteria.select(authors)
-                .where(builder.like(authors.get("email"), "%company2.com"));
+        criteria.select(root)
+                .where(builder.like(root.get("email"), "%company2.com"));
 
         var authorsFromDB = session.createQuery(criteria).getResultList();
 
@@ -97,14 +98,15 @@ public class CriteriaTest {
 
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         JpaCriteriaQuery<Author> criteria = builder.createQuery(Author.class);
-        JpaRoot<Author> authors = criteria.from(Author.class);
+        JpaRoot<Author> root = criteria.from(Author.class);
 
-        criteria.select(authors)
-                .where(builder.between(
-                        authors.get("birthDate"),
-                        LocalDate.of(1989, 1, 1),
-                        LocalDate.of(1995, 12, 1)
-                    )
+        criteria.select(root)
+                .where(
+                        builder.between(
+                            root.get("birthDate"),
+                            LocalDate.of(1989, 1, 1),
+                            LocalDate.of(1995, 12, 1)
+                        )
                 );
 
         var authorsFromDB = session.createQuery(criteria).getResultList();
@@ -156,9 +158,6 @@ public class CriteriaTest {
 
     }
 
-
-
-
     void insertData(){
         var session = HibernateUtil.getSessionFactory().openSession();
 
@@ -184,9 +183,5 @@ public class CriteriaTest {
         session.getTransaction().commit();
 
     }
-
-
-
-
 
 }

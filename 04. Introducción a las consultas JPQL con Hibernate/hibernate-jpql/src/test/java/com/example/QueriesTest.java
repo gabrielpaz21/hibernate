@@ -19,7 +19,7 @@ public class QueriesTest {
 
         var query = session.createQuery(jpql, Author.class);
         query.list().forEach(System.out::println);
-
+        query.list().forEach(author -> System.out.println(author.getAddress()));
     }
 
     @Test
