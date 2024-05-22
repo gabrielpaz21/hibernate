@@ -17,9 +17,9 @@ public class Company {
 
 //    @OneToMany(mappedBy = "company")
     @OneToMany
-    @JoinTable(name = "companies_employees",
-            joinColumns = @JoinColumn(name = "company_id"),
-            inverseJoinColumns = @JoinColumn(name = "employee_id"))
+//    @JoinTable(name = "companies_employees",
+//            joinColumns = @JoinColumn(name = "company_id"),
+//            inverseJoinColumns = @JoinColumn(name = "employee_id"))
     private Set<Employee> employees = new HashSet<>();
 
     public Company() {

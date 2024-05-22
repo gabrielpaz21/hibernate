@@ -25,11 +25,12 @@ public class OneToManyTest {
         session.beginTransaction();
 
         var company1 = new Company("B34343434");
-        var company2 = new Company("B34343434");
+        var company2 = new Company("B34343435");
 
 //        var emp1 = new Employee("emp1", company1);
 //        var emp2 = new Employee("emp2", company1);
-//        var emp3 = new Employee("emp3", company1);
+//        var emp3 = new Employee("emp3", company2);
+
         var emp1 = new Employee("emp1");
         var emp2 = new Employee("emp2");
         var emp3 = new Employee("emp3");
@@ -37,6 +38,7 @@ public class OneToManyTest {
         company1.getEmployees().add(emp1);
         company1.getEmployees().add(emp2);
         company1.getEmployees().add(emp3);
+
         session.persist(company1);
         session.persist(company2);
 

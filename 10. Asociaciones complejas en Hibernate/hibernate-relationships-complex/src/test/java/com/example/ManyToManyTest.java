@@ -40,7 +40,7 @@ public class ManyToManyTest {
         var user2 = new User("user2@email.com");
         var user3 = new User("user3@email.com");
         var user4 = new User("user4@email.com");
-        var user5 = new User("user4@email.com");
+        var user5 = new User("user5@email.com");
 
         var roleDeveloper = new Role("DEVELOPER");
         var roleScrumMaster = new Role("SCRUM_MASTER");

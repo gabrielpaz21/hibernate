@@ -21,6 +21,7 @@ public class Employee {
     public Employee(String name) {
         this.name = name;
     }
+
 //    public Employee(String name, Company company) {
 //        this.name = name;
 //        this.company = company;
