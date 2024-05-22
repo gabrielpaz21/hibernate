@@ -24,8 +24,8 @@ public class JpaTest {
         insertData();
         var em = JpaUtil.getEntityManager();
 
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Author> query = cb.createQuery(Author.class);
+        CriteriaBuilder criteria = em.getCriteriaBuilder();
+        CriteriaQuery<Author> query = criteria.createQuery(Author.class);
         Root<Author> root = query.from(Author.class);
         query.select(root);
         em.createQuery(query).getResultList().forEach(System.out::println);
