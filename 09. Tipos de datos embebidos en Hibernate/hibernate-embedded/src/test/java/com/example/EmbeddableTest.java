@@ -32,12 +32,12 @@ public class EmbeddableTest {
         var cust1 = new Customer("c1", 18, address1);
         var cust2 = new Customer("c2", 18, address2);
         var emp1 = new Employee("e1", 18, address1);
-        var emp2 = new Customer("e2", 18, address2);
+        var cust3 = new Customer("c3", 18, address2);
 
         session.persist(cust1);
         session.persist(cust2);
         session.persist(emp1);
-        session.persist(emp2);
+        session.persist(cust3);
 
         session.getTransaction().commit();
 
