@@ -14,8 +14,9 @@ public class Book {
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @NotFound(action = NotFoundAction.EXCEPTION) // Ocasiona que sea EAGER
-//    @NotFound(action = NotFoundAction.IGNORE)
+//    @NotFound()
+//    @NotFound(action = NotFoundAction.EXCEPTION) // Ocasiona que sea EAGER
+    @NotFound(action = NotFoundAction.IGNORE)
     @JoinColumn(foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Author author;
 
