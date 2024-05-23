@@ -27,7 +27,7 @@ public class SingleTableTest {
 
 //        var premiums = session.createQuery("from PremiumAccount", PremiumAccount.class).list();
 //        premiums.forEach(System.out::println);
-//
+
 //        var accs = session.createQuery("from Account", Account.class).list();
 //        accs.forEach(System.out::println);
 

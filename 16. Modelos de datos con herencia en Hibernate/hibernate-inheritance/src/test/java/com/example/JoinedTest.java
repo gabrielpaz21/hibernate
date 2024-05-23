@@ -18,7 +18,7 @@ public class JoinedTest {
     Permite polimorfismo
     La tabla base tiene las columnas comunes
     Las tablas hijas solo tienen las columnas específicas
-    Es por esto que se realiza join para extraer los atributos de todas las tablas involucradas
+    Es por esto que se realiza jo in para extraer los atributos de todas las tablas involucradas
      */
     @Test
     void joinedTable() {
