@@ -19,6 +19,10 @@ public class AnyTest {
 
         var borrow3 = session.find(Borrow.class, 3L);
         System.out.println(borrow3.getItem().getName()); // vehicle
+
+//        var house1 = session.find(House.class, 1L);
+//        System.out.print(house1);
+
     }
 
     void insertData(){

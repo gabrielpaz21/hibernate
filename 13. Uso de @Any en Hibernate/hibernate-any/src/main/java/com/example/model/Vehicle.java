@@ -12,6 +12,7 @@ public class Vehicle implements Item<Vehicle>{
     private Long id;
 
     private String manufacturer;
+
     private String model;
 
     private Double price;
