@@ -32,6 +32,7 @@ public class CollectionsTest {
         emp3.getSalaries().stream().reduce(Double::sum).ifPresent(System.out::println);
 
     }
+
     @Test
     void basicPostalCodes() {
         insertData();
@@ -91,7 +92,7 @@ public class CollectionsTest {
 
 
         var emp6 = new Employee("emp6", "2222",
-                Map.of("1111", c1,
+                Map.of( "1111", c1,
                         "2222", c2,
                         "3333", c3
                 )
