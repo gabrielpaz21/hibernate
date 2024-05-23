@@ -18,8 +18,9 @@ public class NaturalIdTest {
 //        var emp1 = session.byNaturalId(Employee.class)
 //                .using("dni", "1111A")
 //                .load();
+//        System.out.println(emp1);
 
-        // caso válido cuando únicamente hay una sola clave natural
+//        caso válido cuando únicamente hay una sola clave natural
         var emp2 = session.bySimpleNaturalId(Employee.class).load("2222B");
         System.out.println(emp2);
     }
