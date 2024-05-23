@@ -19,7 +19,6 @@ public class Address {
 
     private String state;
 
-
     public Address() {
     }
 

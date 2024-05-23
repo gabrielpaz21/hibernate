@@ -26,10 +26,10 @@ public class EntityTest {
 
         session.beginTransaction();
 
-        var employee1 = new Employee("111111", "e1@email.com", "11111", 3000.0,
+        var employee1 = new Employee("111111", "e1@email.com", "11111", 3000.333,
                 20, LocalTime.of(10, 30), LocalTime.of(18, 30));
 
-        var employee2 = new Employee("222222", "e2@email.com", "22222", 3000.0,
+        var employee2 = new Employee("222222", "e2@email.com", "22222", 3000.123,
                 20, LocalTime.of(10, 30), LocalTime.of(18, 30));
 
         session.persist(employee1);
