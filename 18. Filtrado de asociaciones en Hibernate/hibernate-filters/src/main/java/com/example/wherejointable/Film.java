@@ -2,6 +2,7 @@ package com.example.wherejointable;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
+import org.hibernate.annotations.FilterJoinTable;
 import org.hibernate.annotations.WhereJoinTable;
 
 import java.util.HashSet;
@@ -17,6 +18,7 @@ public class Film {
     private String title;
 
     @ManyToMany
+//    @FilterJoinTable(name = "classificationFilter", condition = "classification='C1'")
     @WhereJoinTable(clause = "classification='C1'")
     @JoinTable(name = "film_genres",
             joinColumns = @JoinColumn(name = "film_id"),

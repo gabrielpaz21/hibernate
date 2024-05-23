@@ -1,6 +1,7 @@
 package com.example.where;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.SQLRestriction;
 import org.hibernate.annotations.Where;
 
 import java.util.HashSet;
@@ -16,7 +17,8 @@ public class Author {
     private String name;
 
     @OneToMany(mappedBy = "author")
-    @Where(clause = "type = 'comedy'")
+    @SQLRestriction("type = 'comedy'") // new annotation
+//    @Where(clause = "type = 'comedy'") deprecated since = 6.3
     private Set<Book> books = new HashSet<>();
 
     public Author() {

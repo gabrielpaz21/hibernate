@@ -11,11 +11,11 @@ public class WhereTest {
         insertData();
         var session = HibernateUtil.getSessionFactory().openSession();
 
-        var author1 = session.find(Author.class, 1L);
-        author1.getBooks().forEach(System.out::println);
+//        var author1 = session.find(Author.class, 1L);
+//        author1.getBooks().forEach(System.out::println);
 
-//        String jpql = "select a from Author a join fetch a.books where a.id = 1";
-//        session.createQuery(jpql, Author.class).getSingleResult().getBooks().forEach(System.out::println);
+        String jpql = "select a from Author a join fetch a.books where a.id = 1";
+        session.createQuery(jpql, Author.class).getSingleResult().getBooks().forEach(System.out::println);
 
     }
 
