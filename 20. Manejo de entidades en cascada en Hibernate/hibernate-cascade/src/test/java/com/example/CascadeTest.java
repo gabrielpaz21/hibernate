@@ -58,7 +58,7 @@ public class CascadeTest {
 //        session.beginTransaction();
 //
 //        var a1 = new Author("a1", 20, null);
-//        session.persist(a1);
+//        //session.persist(a1);
 //
 //        var b1 = new Book("b1", a1);
 //        var b2 = new Book("b2", a1);

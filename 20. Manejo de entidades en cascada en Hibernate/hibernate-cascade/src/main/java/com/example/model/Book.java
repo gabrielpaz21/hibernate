@@ -12,6 +12,7 @@ public class Book {
     private String title;
 
 //    @ManyToOne(cascade = CascadeType.ALL)
+////    @ManyToOne
 //    @JoinColumn(name = "author_id")
 //    private Author author;
 
@@ -22,9 +23,10 @@ public class Book {
 //        this.title = title;
 //        this.author = author;
 //    }
-public Book(String title) {
-    this.title = title;
-}
+
+    public Book(String title) {
+        this.title = title;
+    }
 
     public Long getId() {
         return id;

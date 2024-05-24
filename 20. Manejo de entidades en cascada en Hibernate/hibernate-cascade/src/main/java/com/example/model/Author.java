@@ -16,12 +16,14 @@ public class Author {
 
     private Integer age;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
 //    @OneToOne
     private Address address;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @OneToMany(mappedBy = "author",cascade = CascadeType.ALL)
 //    @OneToMany(mappedBy = "author")
+//    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinTable(name = "author_book",
             joinColumns = @JoinColumn(name = "author_id"),
             inverseJoinColumns = @JoinColumn(name = "book_id"))
