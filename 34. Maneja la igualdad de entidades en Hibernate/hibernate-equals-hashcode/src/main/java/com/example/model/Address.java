@@ -69,7 +69,6 @@ public class Address {
                 '}';
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if(this == obj) return true;
@@ -77,4 +76,5 @@ public class Address {
         var address = (Address) obj;
         return id != null && Objects.equals(id, address.id);
     }
+
 }

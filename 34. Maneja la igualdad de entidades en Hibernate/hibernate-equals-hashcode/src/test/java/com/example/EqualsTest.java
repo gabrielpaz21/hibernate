@@ -28,7 +28,7 @@ public class EqualsTest {
 
         System.out.println(address1a.equals(address1b)); // false
 
-        // mal uso de merge
+//        // mal uso de merge
 //        session.merge(address1a);
 //        System.out.println(address1a.equals(address1b)); // false
 
@@ -67,8 +67,8 @@ public class EqualsTest {
         // Se usa el equals que se acaba de sobreescribir
         System.out.println(address1a.equals(address1b)); // true
 
-//        address1a = session2.merge(address1a);
-//        System.out.println(address1a.equals(address1b)); // true
+        address1a = session2.merge(address1a);
+        System.out.println(address1a.equals(address1b)); // true
     }
 
     void insertData(){
