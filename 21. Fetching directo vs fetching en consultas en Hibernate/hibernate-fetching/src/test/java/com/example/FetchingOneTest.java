@@ -18,7 +18,7 @@ public class FetchingOneTest {
         var a1 = session.find(Author.class, 1L);
         System.out.println("=============");
 
-        // session.close(); // LazyInitializationException: could not initialize proxy [
+//         session.close(); // LazyInitializationException: could not initialize proxy [
 
         // Si es LAZY se lanza el select justo cuando se solicita el address
         System.out.println(a1.getAddress().getCountry());

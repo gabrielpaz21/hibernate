@@ -33,6 +33,7 @@ public class FetchingAllTest {
 
         System.out.println(a1.getAddress().getCountry());
         System.out.println(a1.getBooks());
+        System.out.println("======================================");
         a1.getBooks().forEach(b -> System.out.println(b.getCategories()));
 
     }
