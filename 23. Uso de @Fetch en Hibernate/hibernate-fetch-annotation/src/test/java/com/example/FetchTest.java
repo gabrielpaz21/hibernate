@@ -133,6 +133,6 @@ public class FetchTest {
         session.persist(c4);
 
         session.getTransaction().commit();
-
+        System.out.println("------------------------");
     }
 }
