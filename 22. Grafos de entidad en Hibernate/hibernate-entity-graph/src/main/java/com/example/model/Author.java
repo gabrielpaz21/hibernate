@@ -5,12 +5,10 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-
 @NamedEntityGraph(
         name = "authorWithBooks",
         attributeNodes = @NamedAttributeNode(value = "books")
 )
-
 @NamedEntityGraph(
         name = "authorWithBooksAndChapters",
         attributeNodes = @NamedAttributeNode(value = "books", subgraph = "author.books.chapters"),

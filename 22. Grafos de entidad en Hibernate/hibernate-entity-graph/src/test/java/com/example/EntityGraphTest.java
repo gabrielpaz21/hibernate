@@ -85,7 +85,7 @@ public class EntityGraphTest {
         var graph = session.createEntityGraph("authorWithBooksAndChapters");
 
         session.createQuery("select a from Author a", Author.class)
-                .setHint("jakarta.persistence.fetchgraph", graph)
+//                .setHint("jakarta.persistence.fetchgraph", graph)
                 .list()
                 .forEach(author -> author.getBooks().forEach(
                                 book -> System.out.println(book.getChapters().size())
@@ -131,6 +131,6 @@ public class EntityGraphTest {
 
         session.getTransaction().commit();
 
-
+        System.out.println("-------------------------");
     }
 }
