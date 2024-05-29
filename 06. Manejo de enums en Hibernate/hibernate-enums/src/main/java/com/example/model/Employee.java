@@ -2,9 +2,11 @@ package com.example.model;
 
 import com.example.converter.CategoryEnumConverter;
 import jakarta.persistence.*;
+import org.hibernate.annotations.DynamicInsert;
 
 
 @Entity
+@DynamicInsert()
 public class Employee {
 
     @Id
@@ -17,11 +19,11 @@ public class Employee {
 
     private Integer age;
 
-      @Enumerated(EnumType.STRING)
-      @Column(columnDefinition = "varchar(30) default 'JUNIOR'")
-//    @Enumerated(EnumType.ORDINAL)
+//      @Enumerated(EnumType.STRING)
+//      @Column(columnDefinition = "varchar(30) default 'JUNIOR'")
+    @Enumerated(EnumType.ORDINAL)
 //    @Convert(converter = CategoryEnumConverter.class)
-//    @Column(columnDefinition = "smallint default 1")
+    @Column(columnDefinition = "smallint default 1")
     private EmployeeCategory category;
 
     public Employee() {
@@ -33,6 +35,13 @@ public class Employee {
         this.age = age;
         this.category = category;
     }
+
+//    @PrePersist
+//    protected void onCreate() {
+//        if (this.category == null) {
+//            this.category = EmployeeCategory.JUNIOR;
+//        }
+//    }
 
     public Long getId() {
         return id;
